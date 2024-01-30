@@ -26,19 +26,24 @@ elif num1 and num2:
 
     r_list.append(r)
 
-    st.write(F"{a} = {q}({b}) + {r}")
+    if r_list[0] == 0:
+        st.write(F"# GCD: {b}")
 
-    while r != 0:
-        if r != 0:
-            a = b
-            b = r
-        
-        q = a//b
-        r = a - (q*b)
-
-        r_list.append(r)
+    else:
 
         st.write(F"{a} = {q}({b}) + {r}")
-
-    if r == 0:
-        st.write(F"# GCD: {r_list[-2]}")
+    
+        while r != 0:
+            if r != 0:
+                a = b
+                b = r
+            
+            q = a//b
+            r = a - (q*b)
+    
+            r_list.append(r)
+    
+            st.write(F"{a} = {q}({b}) + {r}")
+    
+        if r == 0:
+            st.write(F"# GCD: {r_list[-2]}")
